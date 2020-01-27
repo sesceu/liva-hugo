@@ -29,19 +29,25 @@
       <div class="col-lg-3 col-sm-6 mb-5">
         <h6 class="mb-4">Contact Me</h6>
         <ul class="list-unstyled">
+          {{ if .Site.Params.mobile }}
           <li class="mb-3"><a class="text-dark" href="tel:{{ .Site.Params.mobile }}"><i
                 class="ti-mobile mr-3 text-primary"></i>{{ .Site.Params.mobile }}</a></li>
+          {{ end }}
+          {{ if .Site.Params.location }}
           <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i>{{ .Site.Params.location }}</li>
+          {{ end }}
+          {{ if .Site.Params.email }}
           <li class="mb-3"><a class="text-dark" href="mailto:{{ .Site.Params.email }}"><i
-                class="ti-email mr-3 text-primary"></i>{{ .Site.Params.email }}</a>
+                class="ti-email mr-3 text-primary"></i> {{ .Site.Params.email }}</a>
           </li>
+          {{ end }}
         </ul>
       </div>
       <div class="col-lg-3 col-sm-6 mb-5">
         <h6 class="mb-4">Social Contacts</h6>
         <ul class="list-unstyled">
           {{ range .Site.Params.social }}
-          <li class="mb-3"><a class="text-dark" href="{{ .link | safeURL }}">{{ .title }}</a></li>
+          <li class="mb-3"><a class="text-dark" href="{{ .link | safeURL }}"><i class="{{ .icon }} mr-3 text-primary"></i> {{ .title }}</a></li>
           {{ end }}
         </ul>
       </div>
