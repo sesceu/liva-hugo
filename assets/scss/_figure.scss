@@ -1,0 +1,23 @@
+
+figure {
+  text-align: center;
+  font-style: italic;
+}
+
+figcaption {
+  text-align: right;
+}
+
+figure h4 {
+  color: $text-color-light !important;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.content figure h4 {
+  margin-bottom: 0px;
+}
+
+.content figure img {
+  margin-bottom: 5px;
+}
